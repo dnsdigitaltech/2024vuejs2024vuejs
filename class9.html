@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJs - v if, v elseif etc</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p v-if="name">Projeto VueJs</p>
+        <p v-if="age">24</p>
+        <button @click="ShowName"> Mostrar nome | {{ name }}</button>
+        <button @click="ShowAge"> Mostrar ano | {{ age }}</button>
+    </div>
+    <script src="app-class9.js"></script>
+</body>
+</html>
