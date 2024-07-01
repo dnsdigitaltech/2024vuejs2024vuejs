@@ -1,4 +1,5 @@
 <template>
+    <div>
         <nav>
             <ul>
                 <li><a href="">Home</a></li>
@@ -7,6 +8,7 @@
                 <li><a href="">Contato</a></li>
             </ul>
         </nav>
+    </div>
 </template>
 
 <script>
@@ -20,7 +22,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     nav{
        text-align: center; 
     }
