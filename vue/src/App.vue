@@ -2,11 +2,13 @@
   <div id="app">
     <h2>{{ title }}</h2>
     <Navbar></Navbar>
+    <Hook></Hook>
   </div>  
 </template>
 
 <script>
 import Navbar from './components/Navbar';
+import Hook from './components/Hook';
 
 export default {
   name: 'App',
@@ -17,6 +19,7 @@ export default {
   },
   components:{
     Navbar,
+    Hook
   },
   methods:{
   }
