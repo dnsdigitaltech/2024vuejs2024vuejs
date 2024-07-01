@@ -2,7 +2,8 @@
     <div class="hook">
         <h1>Blog</h1>
         <hr>        
-        <div v-for="post in posts" :key="post.id">
+        <input type="search" v-model="searchTrem" placeholder="Buscar">
+        <div v-for="post in filtersearch" :key="post.id">
             <h2>{{ post.title }}</h2>
             <p>{{ post.body | snippet}}</p>
         </div>
@@ -15,7 +16,15 @@ export default {
     name: 'Hook',
     data(){
         return {
-            posts:[]
+            posts:[],
+            searchTrem: '',
+        }
+    },
+    computed:{
+        filtersearch(){
+            return this.posts.filter(post => {
+                return post.title.match(this.searchTrem)
+            })
         }
     },
     methods:{
