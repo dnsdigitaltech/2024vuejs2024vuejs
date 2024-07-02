@@ -13,7 +13,7 @@ class SclassController extends Controller
      */
     public function index()
     {
-        $sclass = DB::table('sclasses')->get();
+        $sclass = Sclass::get();
         return response()->json($sclass);
     }
 
@@ -38,7 +38,8 @@ class SclassController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $show = Sclass::where('id',$id)->first();
+        return response()->json($show);
     }
 
 
@@ -47,7 +48,10 @@ class SclassController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data = array();
+        $data['class_name'] = $request->class_name;
+        $insert = Sclass::where('id',$id)->update($data);
+        return response('Atualizado com sucesso!');
     }
 
     /**
@@ -55,6 +59,7 @@ class SclassController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Sclass::where('id',$id)->delete();
+        return response('Removido com sucesso');
     }
 }
