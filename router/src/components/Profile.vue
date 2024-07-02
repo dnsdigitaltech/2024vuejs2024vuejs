@@ -12,6 +12,14 @@
       return {
         UserId: this.$route.params.user_id
       }
+    },
+    methods:{
+        updateId() {
+            this.UserId = this.$route.params.user_id
+        },
+    },
+    watch:{
+        $route: 'updateId'
     }
   }
   </script>
