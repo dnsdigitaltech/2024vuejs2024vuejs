@@ -15,15 +15,27 @@
                 </li>
             </ul>
         </div>
+        <button @click="Contact">Contato</button> <button @click="About">Sobre</button>
     </div>
 </template>
 
 <script>
+import About from './About.vue';
+import Contact from './Contact.vue';
+
 export default {
     name: 'Navbar',
     data(){
         return {
             userIds: ['1', '2', '3', '4', '5', '6', '7', '8']
+        }
+    },
+    methods:{
+        Contact(){
+            this.$router.push({name: 'Contact'})
+        },
+        About(){
+            this.$router.push({name: 'About'})
         }
     }
 }
