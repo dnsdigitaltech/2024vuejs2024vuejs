@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Sclass;
 use Illuminate\Http\Request;
 use DB;
 class SclassController extends Controller
@@ -22,7 +23,14 @@ class SclassController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateDate = $request->validate([
+            'class_name' => 'required|unique:sclasses|max:25'
+        ]);
+
+        $data = array();
+        $data['class_name'] = $request->class_name;
+        $insert = Sclass::insert($data);
+        return response('Inserido com sucesso!');
     }
 
     /**
