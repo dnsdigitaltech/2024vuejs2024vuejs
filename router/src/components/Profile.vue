@@ -10,7 +10,7 @@
     name: 'Profile',
     data () {
       return {
-        UserId: this.$route.params.user_id
+        UserId: this.$route.params.user_id,
       }
     },
     methods:{
